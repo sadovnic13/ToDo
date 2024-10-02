@@ -90,8 +90,6 @@ class _ToDoRecordState extends State<ToDoRecord> {
                       hideDoneTasks: widget.hideDoneTasks,
                     ));
                     setState(() {});
-                    homepageBloc
-                        .add(FilteringTodoList(parameter: widget.parameter, hideDoneTasks: widget.hideDoneTasks));
                   },
                 ),
               ),

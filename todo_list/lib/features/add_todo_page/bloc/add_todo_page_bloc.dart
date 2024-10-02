@@ -10,10 +10,10 @@ part 'add_todo_page_state.dart';
 
 class AddTodoPageBloc extends Bloc<AddTodoPageEvent, AddTodoPageState> {
   AddTodoPageBloc(this.toDoRepositories) : super(AddTodoPageInitial()) {
-    on<AddTodo>((event, emit) {
+    on<AddTodo>((event, emit) async {
       try {
         emit(AddTodoPageLoading());
-        toDoRepositories.setTodo(event.title, event.description, event.finishDate);
+        await toDoRepositories.setTodo(event.title, event.description, event.finishDate);
         emit(AddTodoPageLoaded());
       } catch (e) {
         emit(AddTodoPageFailure(exeption: e));

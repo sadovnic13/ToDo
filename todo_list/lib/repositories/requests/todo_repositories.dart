@@ -7,7 +7,7 @@ class ToDoRepositories {
   ///Request to add a task
   Future<void> setTodo(String title, String description, DateTime finishDate) async {
     final token = settingsBox.get("token");
-    dio.post("$url/item/",
+    await dio.post("$url/item/",
         data: {
           "id": 0,
           "created_at": DateTime.now().toIso8601String(),
@@ -32,7 +32,7 @@ class ToDoRepositories {
   Future<void> markTodo(int id, bool isReady) async {
     final token = settingsBox.get("token");
 
-    dio.patch("$url/item/$id/",
+    await dio.patch("$url/item/$id/",
         data: {"is_ready": isReady},
         options: Options(
           headers: {
@@ -50,7 +50,7 @@ class ToDoRepositories {
   Future<void> updateTodo(int id, String title, String description, DateTime finishDate) async {
     final token = settingsBox.get("token");
 
-    dio.put("$url/item/$id/",
+    await dio.put("$url/item/$id/",
         data: {
           "title": title,
           "description": description,
@@ -70,7 +70,7 @@ class ToDoRepositories {
   Future<void> deleteTodo(int id) async {
     final token = settingsBox.get("token");
 
-    dio.delete("$url/item/$id/",
+    await dio.delete("$url/item/$id/",
         options: Options(
           headers: {
             "Authorization": "Token $token",
