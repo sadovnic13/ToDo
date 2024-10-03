@@ -73,9 +73,9 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                 backgroundColor: Colors.black,
                 content: Text(
                   S.of(context).pleaseRestartTheApplication,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
-                duration: Duration(seconds: 3),
+                duration: const Duration(seconds: 3),
               ));
           },
         ),
@@ -121,13 +121,13 @@ class _ColorSelectorState extends State<ColorSelector> {
             settingsBox.put('systemColor', item);
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
-              ..showSnackBar(const SnackBar(
+              ..showSnackBar(SnackBar(
                 backgroundColor: Colors.black,
                 content: Text(
-                  "Please, restart the application.",
-                  style: TextStyle(color: Colors.white),
+                  S.of(context).pleaseRestartTheApplication,
+                  style: const TextStyle(color: Colors.white),
                 ),
-                duration: Duration(seconds: 3),
+                duration: const Duration(seconds: 3),
               ));
           },
         ),
