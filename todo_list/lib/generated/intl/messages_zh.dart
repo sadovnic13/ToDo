@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("密码"),
         "performance": MessageLookupByLibrary.simpleMessage("完成情况"),
         "pleaseEnterText": MessageLookupByLibrary.simpleMessage("请输入文本"),
+        "pleaseRestartTheApplication":
+            MessageLookupByLibrary.simpleMessage("请重新启动应用程序"),
         "readyDateX": m0,
         "repeatPassword": MessageLookupByLibrary.simpleMessage("重复密码"),
         "save": MessageLookupByLibrary.simpleMessage("保存"),
@@ -51,8 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("登录"),
         "signUp": MessageLookupByLibrary.simpleMessage("注册"),
         "title": MessageLookupByLibrary.simpleMessage("标题"),
-        "tryAgainLater":
-            MessageLookupByLibrary.simpleMessage("Try again later."),
+        "tryAgainLater": MessageLookupByLibrary.simpleMessage("稍后再试"),
         "youDontHavePlans": MessageLookupByLibrary.simpleMessage("你没有计划"),
         "yourTodoList": MessageLookupByLibrary.simpleMessage("你的待办事项")
       };

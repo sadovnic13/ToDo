@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "performance": MessageLookupByLibrary.simpleMessage("Завершенность"),
         "pleaseEnterText":
             MessageLookupByLibrary.simpleMessage("Пожалуйста введите текст"),
+        "pleaseRestartTheApplication": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, перезапустите приложение"),
         "readyDateX": m0,
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Повторите пароль"),
@@ -57,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUp": MessageLookupByLibrary.simpleMessage("Регистрируйся"),
         "title": MessageLookupByLibrary.simpleMessage("Заголовок"),
         "tryAgainLater":
-            MessageLookupByLibrary.simpleMessage("Try again later."),
+            MessageLookupByLibrary.simpleMessage("Попробуйте позже"),
         "youDontHavePlans":
             MessageLookupByLibrary.simpleMessage("У вас нет задач"),
         "yourTodoList": MessageLookupByLibrary.simpleMessage("Ваш список задач")

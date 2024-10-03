@@ -27,5 +27,6 @@
   "logOut": "Cerrar sesión",
   "login": "Iniciar sesión",
   "invalidLoginOrPassword": "Usuario o contraseña inválidos",
-  "tryAgainLater": "Inténtalo de nuevo más tarde"
+  "tryAgainLater": "Inténtalo de nuevo más tarde",
+  "pleaseRestartTheApplication": "Por favor, reinicia la aplicación"
 }

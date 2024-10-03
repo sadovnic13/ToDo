@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "performance": MessageLookupByLibrary.simpleMessage("الأداء"),
         "pleaseEnterText":
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال النص"),
+        "pleaseRestartTheApplication":
+            MessageLookupByLibrary.simpleMessage("يرجى إعادة تشغيل التطبيق"),
         "readyDateX": m0,
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("أعد كلمة المرور"),
@@ -57,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUp": MessageLookupByLibrary.simpleMessage("اشترك"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
         "tryAgainLater":
-            MessageLookupByLibrary.simpleMessage("Try again later."),
+            MessageLookupByLibrary.simpleMessage("حاول مرة أخرى لاحقًا"),
         "youDontHavePlans":
             MessageLookupByLibrary.simpleMessage("لا توجد لديك خطط"),
         "yourTodoList":

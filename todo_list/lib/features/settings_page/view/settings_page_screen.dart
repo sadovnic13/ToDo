@@ -69,10 +69,10 @@ class _LanguageSelectorState extends State<LanguageSelector> {
             settingsBox.put('language', items[item]);
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
-              ..showSnackBar(const SnackBar(
+              ..showSnackBar(SnackBar(
                 backgroundColor: Colors.black,
                 content: Text(
-                  "Please, restart the application.",
+                  S.of(context).pleaseRestartTheApplication,
                   style: TextStyle(color: Colors.white),
                 ),
                 duration: Duration(seconds: 3),

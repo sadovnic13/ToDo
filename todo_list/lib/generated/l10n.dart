@@ -340,11 +340,21 @@ class S {
     );
   }
 
-  /// `Try again later.`
+  /// `Try again later`
   String get tryAgainLater {
     return Intl.message(
-      'Try again later.',
+      'Try again later',
       name: 'tryAgainLater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, restart the application`
+  String get pleaseRestartTheApplication {
+    return Intl.message(
+      'Please, restart the application',
+      name: 'pleaseRestartTheApplication',
       desc: '',
       args: [],
     );

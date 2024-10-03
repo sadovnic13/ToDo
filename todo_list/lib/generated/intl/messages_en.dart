@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "performance": MessageLookupByLibrary.simpleMessage("Performance"),
         "pleaseEnterText":
             MessageLookupByLibrary.simpleMessage("Please enter text"),
+        "pleaseRestartTheApplication": MessageLookupByLibrary.simpleMessage(
+            "Please, restart the application"),
         "readyDateX": m0,
         "reationDate": MessageLookupByLibrary.simpleMessage("Сreation date"),
         "repeatPassword":
@@ -58,7 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "tryAgainLater":
-            MessageLookupByLibrary.simpleMessage("Try again later."),
+            MessageLookupByLibrary.simpleMessage("Try again later"),
         "youDontHavePlans":
             MessageLookupByLibrary.simpleMessage("You don\'t have plans"),
         "yourTodoList": MessageLookupByLibrary.simpleMessage("Your ToDo list")

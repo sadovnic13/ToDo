@@ -27,5 +27,6 @@
   "logOut": "登出",
   "login": "登录",
   "invalidLoginOrPassword": "无效的登录或密码",
-  "tryAgainLater": "稍后再试"
+  "tryAgainLater": "稍后再试",
+  "pleaseRestartTheApplication": "请重新启动应用程序"
 }

@@ -28,5 +28,6 @@
   "logOut": "Log out",
   "login": "Login",
   "invalidLoginOrPassword": "Invalid login or password",
-  "tryAgainLater": "Try again later"
+  "tryAgainLater": "Try again later",
+  "pleaseRestartTheApplication": "Please, restart the application"
 }

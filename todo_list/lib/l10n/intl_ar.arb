@@ -27,5 +27,6 @@
   "logOut": "تسجيل الخروج",
   "login": "تسجيل الدخول",
   "invalidLoginOrPassword": "اسم المستخدم أو كلمة المرور غير صحيحة",
-  "tryAgainLater": "حاول مرة أخرى لاحقًا"
+  "tryAgainLater": "حاول مرة أخرى لاحقًا",
+  "pleaseRestartTheApplication": "يرجى إعادة تشغيل التطبيق"
 }

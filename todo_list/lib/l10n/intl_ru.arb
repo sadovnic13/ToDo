@@ -27,5 +27,6 @@
   "logOut": "Выйти",
   "login": "Войти",
   "invalidLoginOrPassword": "Неверный логин или пароль",
-  "tryAgainLater": "Попробуйте позже"
+  "tryAgainLater": "Попробуйте позже",
+  "pleaseRestartTheApplication": "Пожалуйста, перезапустите приложение"
 }
