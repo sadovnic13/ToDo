@@ -22,10 +22,10 @@ final class HomepageLoaded extends HomepageState {
 }
 
 final class HomepageFailure extends HomepageState {
-  HomepageFailure({required this.exeption});
+  HomepageFailure({required this.exception});
 
-  final Object? exeption;
+  final Object? exception;
 
   @override
-  List<Object?> get props => [exeption];
+  List<Object?> get props => [exception];
 }

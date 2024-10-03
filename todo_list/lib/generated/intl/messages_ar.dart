@@ -56,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "signUp": MessageLookupByLibrary.simpleMessage("اشترك"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "tryAgainLater":
+            MessageLookupByLibrary.simpleMessage("Try again later."),
         "youDontHavePlans":
             MessageLookupByLibrary.simpleMessage("لا توجد لديك خطط"),
         "yourTodoList":

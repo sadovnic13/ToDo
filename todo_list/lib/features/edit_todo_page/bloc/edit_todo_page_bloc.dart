@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,9 +11,13 @@ part 'edit_todo_page_state.dart';
 class EditTodoPageBloc extends Bloc<EditTodoPageEvent, EditTodoPageState> {
   EditTodoPageBloc(this.toDoRepositories) : super(EditTodoPageInitial()) {
     on<EditTodo>((event, emit) async {
-      emit(EditTodoPageLoading());
-      await toDoRepositories.updateTodo(event.id, event.title, event.description, event.finishDate);
-      emit(EditTodoPageLoaded());
+      try {
+        emit(EditTodoPageLoading());
+        await toDoRepositories.updateTodo(event.id, event.title, event.description, event.finishDate);
+        emit(EditTodoPageLoaded());
+      } on DioException catch (e) {
+        emit(EditTodoPageFailure(exeption: e));
+      }
     });
   }
 

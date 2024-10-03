@@ -26,5 +26,6 @@
   "settings": "设置",
   "logOut": "登出",
   "login": "登录",
-  "invalidLoginOrPassword": "无效的登录或密码"
+  "invalidLoginOrPassword": "无效的登录或密码",
+  "tryAgainLater": "稍后再试"
 }

@@ -45,8 +45,22 @@ class _HomepageScreenState extends State<HomepageScreen> {
         ],
       ),
       drawer: const Drawer(child: SideMenu()),
-      body: BlocBuilder<HomepageBloc, HomepageState>(
+      body: BlocConsumer<HomepageBloc, HomepageState>(
         bloc: homepageBloc,
+        listener: (context, state) {
+          if (state is HomepageFailure) {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(SnackBar(
+                backgroundColor: Colors.black,
+                content: Text(
+                  S.of(context).tryAgainLater,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                duration: const Duration(seconds: 3),
+              ));
+          }
+        },
         builder: (context, state) {
           //case of loading all page data
           if (state is HomepageLoaded) {
@@ -70,7 +84,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
           }
 
           if (state is HomepageFailure) {
-            debugPrint('Error');
+            return Center(
+              child: Text(state.exception.toString()),
+            );
           }
 
           //case of loading data

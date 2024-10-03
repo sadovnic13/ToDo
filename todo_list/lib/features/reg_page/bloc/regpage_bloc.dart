@@ -20,7 +20,12 @@ class RegpageBloc extends Bloc<RegpageEvent, RegpageState> {
         await registrationRepositories.registrationUser(event.login, event.password);
         emit(RegistrationSuccess());
       } on DioException catch (e) {
-        emit(RegistrationFailure(exception: e.response!.data['password'][0]));
+        if (e.response != null) {
+          Map responseData = e.response!.data;
+          emit(RegistrationFailure(exception: responseData[responseData.keys.toList().first][0]));
+        } else {
+          emit(RegistrationFailure(exception: "Server ERROR"));
+        }
       }
     });
   }

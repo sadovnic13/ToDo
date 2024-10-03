@@ -26,5 +26,6 @@
   "settings": "Настройки",
   "logOut": "Выйти",
   "login": "Войти",
-  "invalidLoginOrPassword": "Неверный логин или пароль"
+  "invalidLoginOrPassword": "Неверный логин или пароль",
+  "tryAgainLater": "Попробуйте позже"
 }

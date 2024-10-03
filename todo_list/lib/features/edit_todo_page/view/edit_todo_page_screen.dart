@@ -55,6 +55,18 @@ class _EditTodoPageState extends State<EditTodoPage> {
         if (state is EditTodoPageLoaded) {
           Navigator.pushNamedAndRemoveUntil(context, '/home_page_screen', (route) => false);
         }
+        if (state is EditTodoPageFailure) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(
+              backgroundColor: Colors.black,
+              content: Text(
+                S.of(context).tryAgainLater,
+                style: const TextStyle(color: Colors.white),
+              ),
+              duration: const Duration(seconds: 3),
+            ));
+        }
       },
       child: Scaffold(
         appBar: AppBar(),
@@ -95,36 +107,75 @@ class _EditTodoPageState extends State<EditTodoPage> {
         ),
 
         // Submit
-        floatingActionButton: BlocBuilder<EditTodoPageBloc, EditTodoPageState>(
-          bloc: editTodoPageBloc,
-          builder: (context, state) {
-            if (state is EditTodoPageLoading) {
+        floatingActionButton: SizedBox(
+          height: 40,
+          width: 200,
+          child: BlocBuilder<EditTodoPageBloc, EditTodoPageState>(
+            bloc: editTodoPageBloc,
+            builder: (context, state) {
+              if (state is EditTodoPageLoading) {
+                return const ElevatedButton(
+                  onPressed: null,
+                  child: SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 3,
+                    ),
+                  ),
+                );
+              }
+
               return ElevatedButton(
-                onPressed: null,
                 child: Text(
                   S.of(context).save,
                   style: const TextStyle(fontSize: 20),
                 ),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    editTodoPageBloc.add(EditTodo(
+                      id: record!.id,
+                      title: _title.text,
+                      description: _description.text,
+                      finishDate: _selectedDay ?? _date,
+                    ));
+                  }
+                },
               );
-            }
-            return ElevatedButton(
-              child: Text(
-                S.of(context).save,
-                style: const TextStyle(fontSize: 20),
-              ),
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  editTodoPageBloc.add(EditTodo(
-                    id: record!.id,
-                    title: _title.text,
-                    description: _description.text,
-                    finishDate: _selectedDay ?? _date,
-                  ));
-                }
-              },
-            );
-          },
+            },
+          ),
         ),
+
+        // floatingActionButton: BlocBuilder<EditTodoPageBloc, EditTodoPageState>(
+        //   bloc: editTodoPageBloc,
+        //   builder: (context, state) {
+        //     if (state is EditTodoPageLoading) {
+        //       return ElevatedButton(
+        //         onPressed: null,
+        //         child: Text(
+        //           S.of(context).save,
+        //           style: const TextStyle(fontSize: 20),
+        //         ),
+        //       );
+        //     }
+        //     return ElevatedButton(
+        //       child: Text(
+        //         S.of(context).save,
+        //         style: const TextStyle(fontSize: 20),
+        //       ),
+        //       onPressed: () {
+        //         if (_formKey.currentState!.validate()) {
+        //           editTodoPageBloc.add(EditTodo(
+        //             id: record!.id,
+        //             title: _title.text,
+        //             description: _description.text,
+        //             finishDate: _selectedDay ?? _date,
+        //           ));
+        //         }
+        //       },
+        //     );
+        //   },
+        // ),
       ),
     );
   }

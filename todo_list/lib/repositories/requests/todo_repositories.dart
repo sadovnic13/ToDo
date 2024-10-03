@@ -7,6 +7,7 @@ class ToDoRepositories {
   ///Request to add a task
   Future<void> setTodo(String title, String description, DateTime finishDate) async {
     final token = settingsBox.get("token");
+
     await dio.post("$url/item/",
         data: {
           "id": 0,

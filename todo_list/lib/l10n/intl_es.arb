@@ -26,5 +26,6 @@
   "settings": "Ajustes",
   "logOut": "Cerrar sesión",
   "login": "Iniciar sesión",
-  "invalidLoginOrPassword": "Usuario o contraseña inválidos"
+  "invalidLoginOrPassword": "Usuario o contraseña inválidos",
+  "tryAgainLater": "Inténtalo de nuevo más tarde"
 }

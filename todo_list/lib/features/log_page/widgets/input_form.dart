@@ -53,6 +53,7 @@ class _InputFormState extends State<InputForm> {
           // sign in button
           SizedBox(
             height: 40,
+            width: 200,
             child: BlocBuilder<LogpageBloc, LogpageState>(
               bloc: widget.logpageBloc,
               builder: (context, state) {

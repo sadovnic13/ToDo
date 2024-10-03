@@ -26,5 +26,6 @@
   "settings": "الإعدادات",
   "logOut": "تسجيل الخروج",
   "login": "تسجيل الدخول",
-  "invalidLoginOrPassword": "اسم المستخدم أو كلمة المرور غير صحيحة"
+  "invalidLoginOrPassword": "اسم المستخدم أو كلمة المرور غير صحيحة",
+  "tryAgainLater": "حاول مرة أخرى لاحقًا"
 }

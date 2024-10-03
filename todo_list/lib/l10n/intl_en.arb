@@ -27,5 +27,6 @@
   "settings": "Settings",
   "logOut": "Log out",
   "login": "Login",
-  "invalidLoginOrPassword": "Invalid login or password"
+  "invalidLoginOrPassword": "Invalid login or password",
+  "tryAgainLater": "Try again later"
 }

@@ -33,6 +33,18 @@ class _AddTodoPageScreenState extends State<AddTodoPageScreen> {
         if (state is AddTodoPageLoaded) {
           Navigator.pushNamedAndRemoveUntil(context, '/home_page_screen', (route) => false);
         }
+        if (state is AddTodoPageFailure) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(
+              backgroundColor: Colors.black,
+              content: Text(
+                S.of(context).tryAgainLater,
+                style: const TextStyle(color: Colors.white),
+              ),
+              duration: const Duration(seconds: 3),
+            ));
+        }
       },
       child: Scaffold(
         appBar: AppBar(),
@@ -73,20 +85,42 @@ class _AddTodoPageScreenState extends State<AddTodoPageScreen> {
         ),
 
         // Submit button
-        floatingActionButton: ElevatedButton(
-          child: Text(
-            S.of(context).save,
-            style: const TextStyle(fontSize: 20),
+        floatingActionButton: SizedBox(
+          height: 40,
+          width: 200,
+          child: BlocBuilder<AddTodoPageBloc, AddTodoPageState>(
+            bloc: addTodoPageBloc,
+            builder: (context, state) {
+              if (state is AddTodoPageLoading) {
+                return const ElevatedButton(
+                  onPressed: null,
+                  child: SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 3,
+                    ),
+                  ),
+                );
+              }
+
+              return ElevatedButton(
+                child: Text(
+                  S.of(context).save,
+                  style: const TextStyle(fontSize: 20),
+                ),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    addTodoPageBloc.add(AddTodo(
+                      title: _title.text,
+                      description: _description.text,
+                      finishDate: _selectedDay ?? _date,
+                    ));
+                  }
+                },
+              );
+            },
           ),
-          onPressed: () {
-            if (_formKey.currentState!.validate()) {
-              addTodoPageBloc.add(AddTodo(
-                title: _title.text,
-                description: _description.text,
-                finishDate: _selectedDay ?? _date,
-              ));
-            }
-          },
         ),
       ),
     );
