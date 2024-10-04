@@ -137,10 +137,10 @@ REST_FRAMEWORK = {
     ),
 }
 
-STREAM_API_KEY = "9v8xq3ufwj8y"
-STREAM_API_SECRET = "q6ncesmcwcvfh3sfjnw3rgpm4pbjxcdn2jbkqj8gdhw5ecej3bynkqcgza7g6e4n"
-DJOSER = {
-    'SERIALIZERS': {
-        'token': 'auth.serializers.StreamTokenSerializer',
-    }
-}
+# STREAM_API_KEY = "9v8xq3ufwj8y"
+# STREAM_API_SECRET = "q6ncesmcwcvfh3sfjnw3rgpm4pbjxcdn2jbkqj8gdhw5ecej3bynkqcgza7g6e4n"
+# DJOSER = {
+#     'SERIALIZERS': {
+#         'token': 'auth.serializers.StreamTokenSerializer',
+#     }
+# }
