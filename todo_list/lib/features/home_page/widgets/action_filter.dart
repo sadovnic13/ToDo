@@ -11,18 +11,7 @@ import 'package:todo_list/util/util.dart';
 ///[onParameterChanged] - method of sorting parameter change
 ///[onHideDoneTasksChanged] - method of changing the display of tasks
 class ActionFilter extends StatefulWidget {
-  // final String parameter;
-  // final bool hideDoneTasks;
-  // final ValueChanged<String> onParameterChanged;
-  // final ValueChanged<bool> onHideDoneTasksChanged;
-
-  const ActionFilter({
-    super.key,
-    // required this.parameter,
-    // required this.hideDoneTasks,
-    // required this.onParameterChanged,
-    // required this.onHideDoneTasksChanged,
-  });
+  const ActionFilter({super.key});
 
   @override
   State<ActionFilter> createState() => _ActionFilterState();
@@ -49,7 +38,6 @@ class _ActionFilterState extends State<ActionFilter> {
               ),
             ),
             onTap: () {
-              // onParameterChanged("is_ready");
               parameter = "is_ready";
 
               homepageBloc.add(FilteringTodoList(parameter: "is_ready", hideDoneTasks: hideDoneTasks));
@@ -67,7 +55,6 @@ class _ActionFilterState extends State<ActionFilter> {
               ),
             ),
             onTap: () {
-              // onParameterChanged("finish_date");
               parameter = "finish_date";
 
               homepageBloc.add(FilteringTodoList(parameter: "finish_date", hideDoneTasks: hideDoneTasks));
@@ -85,7 +72,6 @@ class _ActionFilterState extends State<ActionFilter> {
               ),
             ),
             onTap: () {
-              // onParameterChanged("create_at");
               parameter = "create_at";
 
               homepageBloc.add(FilteringTodoList(parameter: "create_at", hideDoneTasks: hideDoneTasks));
@@ -100,7 +86,6 @@ class _ActionFilterState extends State<ActionFilter> {
                 value: hideDoneTasks,
                 onChanged: (value) {
                   Navigator.pop(context);
-                  // onHideDoneTasksChanged(value!);
                   hideDoneTasks = value!;
                   homepageBloc.add(FilteringTodoList(parameter: parameter, hideDoneTasks: value));
                 },
@@ -114,7 +99,6 @@ class _ActionFilterState extends State<ActionFilter> {
             ),
             onTap: () {
               bool newValue = !hideDoneTasks;
-              // onHideDoneTasksChanged(newValue);
               hideDoneTasks = newValue;
               homepageBloc.add(FilteringTodoList(parameter: parameter, hideDoneTasks: newValue));
             },

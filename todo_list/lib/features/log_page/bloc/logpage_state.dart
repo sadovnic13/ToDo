@@ -21,7 +21,6 @@ class LoginFailure extends LogpageState {
   LoginFailure({required this.exception});
 
   final Object? exception;
-  // final String errorMessage;
 
   @override
   List<Object?> get props => [exception];

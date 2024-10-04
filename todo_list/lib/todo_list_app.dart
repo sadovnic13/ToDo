@@ -32,9 +32,7 @@ class ToDoList extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Sora',
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          // canvasColor: Colors.transparent,
           colorScheme: ColorScheme.fromSeed(seedColor: Color(int.parse('0xff${settingsBox.get("systemColor")}'))),
-          // useMaterial3: true,
         ),
         initialRoute: settingsBox.get("token") != null ? '/home_page_screen' : '/log_page_screen',
       ),

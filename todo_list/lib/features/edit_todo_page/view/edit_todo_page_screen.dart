@@ -145,37 +145,6 @@ class _EditTodoPageState extends State<EditTodoPage> {
             },
           ),
         ),
-
-        // floatingActionButton: BlocBuilder<EditTodoPageBloc, EditTodoPageState>(
-        //   bloc: editTodoPageBloc,
-        //   builder: (context, state) {
-        //     if (state is EditTodoPageLoading) {
-        //       return ElevatedButton(
-        //         onPressed: null,
-        //         child: Text(
-        //           S.of(context).save,
-        //           style: const TextStyle(fontSize: 20),
-        //         ),
-        //       );
-        //     }
-        //     return ElevatedButton(
-        //       child: Text(
-        //         S.of(context).save,
-        //         style: const TextStyle(fontSize: 20),
-        //       ),
-        //       onPressed: () {
-        //         if (_formKey.currentState!.validate()) {
-        //           editTodoPageBloc.add(EditTodo(
-        //             id: record!.id,
-        //             title: _title.text,
-        //             description: _description.text,
-        //             finishDate: _selectedDay ?? _date,
-        //           ));
-        //         }
-        //       },
-        //     );
-        //   },
-        // ),
       ),
     );
   }

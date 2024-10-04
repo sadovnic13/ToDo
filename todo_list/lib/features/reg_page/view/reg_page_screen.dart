@@ -85,7 +85,6 @@ class _RegPageScreenState extends State<RegPageScreen> {
                         child: Text(
                           S.of(context).logIn,
                           style: const TextStyle(
-                            // color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

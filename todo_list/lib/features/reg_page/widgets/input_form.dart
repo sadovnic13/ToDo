@@ -38,7 +38,6 @@ class _InputFormState extends State<InputForm> {
           // username textfield
           DataTextField(
             controller: _loginController,
-            // hintText: S.of(context).email,
             hintText: S.of(context).login,
             obscureText: false,
           ),
@@ -83,7 +82,6 @@ class _InputFormState extends State<InputForm> {
                     S.of(context).signUp,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      // fontSize: fontSize20,
                     ),
                   ),
                   onPressed: () {

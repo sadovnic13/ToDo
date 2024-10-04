@@ -18,31 +18,21 @@ class HomepageScreen extends StatefulWidget {
 class _HomepageScreenState extends State<HomepageScreen> {
   @override
   void didChangeDependencies() {
-    // homepageBloc.add(FilteringTodoList(parameter: parameter, hideDoneTasks: hideDoneTasks));
     super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
     final homepageBloc = BlocProvider.of<HomepageBloc>(context);
-    // homepageBloc.add(FilteringTodoList(parameter: parameter, hideDoneTasks: hideDoneTasks));
     return Scaffold(
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // ToDoRepositories().getAllTodo();
             Navigator.pushNamed(context, '/add_todo_page_screen');
           },
           child: const Icon(Icons.add)),
       appBar: AppBar(
         title: Text(S.of(context).yourTodoList),
-        actions: const [
-          ActionFilter(
-              // parameter: parameter,
-              // hideDoneTasks: hideDoneTasks,
-              // onParameterChanged: updateParameter,
-              // onHideDoneTasksChanged: updateHideCompletedTasks,
-              )
-        ],
+        actions: const [ActionFilter()],
       ),
       drawer: const Drawer(child: SideMenu()),
       body: BlocConsumer<HomepageBloc, HomepageState>(
